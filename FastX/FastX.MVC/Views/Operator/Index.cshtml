@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FastX.DAL.Models.User>
+
+@{
+    ViewData["Title"] = "Manage Operators";
+}
+
+<h2 class="mt-4 mb-4 text-primary fw-bold">👨‍💼 Manage Operators</h2>
+
+<a asp-action="Create" class="btn btn-success btn-sm mb-3" style="cursor: pointer;">
+    ➕ Add New Operator
+</a>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover bg-white shadow" style="font-size: 15px;">
+        <thead class="table-danger text-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var op in Model)
+            {
+                <tr>
+                    <td>@op.FullName</td>
+                    <td>@op.Email</td>
+                    <td class="text-center">
+                        <a asp-controller="Operator" asp-action="Edit" asp-route-id="@op.Id"
+                           class="btn btn-sm"
+                           style="background-color:#cce5ff; color:black; border:1px solid #007bff; cursor: pointer;">
+                            ✏️ Edit
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

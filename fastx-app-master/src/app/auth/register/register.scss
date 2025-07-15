@@ -1,0 +1,70 @@
+.register-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 2rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.10);
+  animation: fadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: 500;
+    color: var(--primary-bg);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    transition: border 0.3s;
+    &:focus {
+      border: 1.5px solid var(--accent-light);
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 0.7rem;
+    background: linear-gradient(90deg, var(--accent) 60%, var(--accent-light) 100%);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+    transition: background 0.3s, transform 0.2s;
+    animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    &:hover {
+      background: linear-gradient(90deg, var(--accent-light) 60%, var(--accent) 100%);
+      transform: scale(1.04);
+    }
+  }
+  }
+
+  .success {
+    color: green;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .error {
+    color: red;
+    margin-top: 1rem;
+    text-align: center;
+  }

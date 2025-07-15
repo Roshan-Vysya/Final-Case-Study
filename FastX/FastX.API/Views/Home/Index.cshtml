@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "FastX Dashboard";
+}
+
+<h2>Welcome to FastX</h2>
+
+<ul>
+    <li><a href="/Route/Search">🚌 Search & Book Buses</a></li>
+    <li><a href="/Booking/My">🎟 My Bookings</a></li>
+    <li><a href="/User/Profile">👤 My Profile</a></li>
+</ul>
+
+@if (User.IsInRole("Admin") || User.IsInRole("Operator"))
+{
+    <hr />
+    <h4>Admin/Operator Panel</h4>
+    <ul>
+        <li><a href="/Bus/Manage">🚌 Manage Buses</a></li>
+        <li><a href="/Route/Manage">🧭 Manage Routes</a></li>
+        <li><a href="/Booking/All">📋 All Bookings</a></li>
+        <li><a href="/User/All">👥 All Users</a></li>
+    </ul>
+}

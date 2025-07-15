@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.top-bar {
+  background-color: var(--primary-bg) !important;
+  color: var(--text-light) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border-bottom: 2px solid var(--accent-light);
+  animation: fadeInDown 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  img {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px var(--accent));
+    transition: transform 0.3s;
+  }
+  .logo-text {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+  }
+  &:hover .logo-text {
+    color: var(--accent-light);
+    text-shadow: 0 0 10px var(--accent-light);
+  }
+  &:hover img {
+    transform: scale(1.08);
+  }
+}
+
+.top-bar nav {
+  display: flex;
+  gap: 12px;
+}
+.top-bar nav a {
+  color: var(--accent);
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.08);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.top-bar nav a:hover {
+  color: var(--accent-light) !important;
+  background: rgba(250, 204, 21, 0.18);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+
+  img {
+    height: 36px; // or 40px depending on design
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f59e0b; // match your orange
+    font-family: 'Poppins', sans-serif;
+  }
+}

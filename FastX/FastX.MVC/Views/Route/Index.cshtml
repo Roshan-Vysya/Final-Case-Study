@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FastX.DAL.Models.Route>
+
+@{
+    ViewData["Title"] = "Manage Routes";
+}
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b22222;">
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold fs-4">FastX</span>
+    </div>
+</nav>
+
+<h2 class="mt-4 mb-4 text-primary fw-bold">🚌 Manage Routes</h2>
+
+<a href="/Route/Create" class="btn btn-outline-primary w-100 py-3 shadow-sm">
+    ➕ Add New Route
+</a>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover bg-white shadow" style="font-size: 15px;">
+        <thead class="table-danger text-dark">
+            <tr>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Fare (₹)</th>
+                <th>Bus</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var route in Model)
+            {
+                <tr>
+                    <td>@route.Origin</td>
+                    <td>@route.Destination</td>
+                    <td>@route.DepartureTime.ToString("dd-MM-yyyy HH:mm")</td>
+                    <td>@route.ArrivalTime.ToString("dd-MM-yyyy HH:mm")</td>
+                    <td>@route.Fare.ToString("0.00")</td>
+                    <td>@route.Bus?.Name</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@route.Id" class="btn btn-sm"
+                           style="background-color:#cce5ff; color:black; border:1px solid #007bff; cursor: pointer;">
+                            ✏️ Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@route.Id" class="btn btn-sm ms-2"
+                           style="background-color:#f8d7da; color:black; border:1px solid #dc3545; cursor: pointer;">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

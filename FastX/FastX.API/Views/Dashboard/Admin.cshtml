@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<h2>Hello, @User.Identity.Name (Admin/Operator)</h2>
+
+<ul>
+    <li><a href="/Bus/Manage">🚌 Manage Buses</a></li>
+    <li><a href="/Route/Manage">🗺 Manage Routes</a></li>
+    <li><a href="/Booking/All">📋 View All Bookings</a></li>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <li><a href="/User/All">👥 Manage Users</a></li>
+    }
+</ul>

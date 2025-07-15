@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FastX.DAL.Models.Booking>
+
+@{
+    ViewData["Title"] = "View Bookings";
+}
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b22222;">
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold fs-4">FastX</span>
+    </div>
+</nav>
+
+<h2 class="mt-4 mb-4 text-primary fw-bold">📖 View Bookings</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover bg-white shadow" style="font-size: 15px;">
+        <thead class="table-danger text-dark">
+            <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Route</th>
+                <th>Booking Date</th>
+                <th>Seats</th>
+                <th>Total Fare (₹)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td>@b.User?.FullName</td>
+                    <td>@b.User?.Email</td>
+                    <td>@($"{b.Route?.Origin} ➜ {b.Route?.Destination}")</td>
+                    <td>@b.BookingDate.ToString("dd-MM-yyyy HH:mm")</td>
+                    <td>@b.SeatCount</td>
+                    <td>@b.TotalFare.ToString("0.00")</td>
+                    <td class="fw-bold">
+                        @(b.IsCancelled ? "❌ Cancelled" : "✅ Confirmed")
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

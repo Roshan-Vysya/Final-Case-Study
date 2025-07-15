@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FastX.DAL.Models.Bus>
+@{
+    ViewData["Title"] = "Manage Buses";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b22222;">
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold fs-4">FastX</span>
+    </div>
+</nav>
+
+<h2 class="mt-4 mb-4 text-primary fw-bold">🚌 Manage Buses</h2>
+
+<a asp-action="Create" class="btn btn-success btn-sm mb-3" style="cursor: pointer;">
+    ➕ Add New Bus
+</a>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover bg-white shadow" style="font-size: 15px;">
+        <thead class="table-danger text-dark">
+            <tr>
+                <th>Name</th>
+                <th>Bus Number</th>
+                <th>Type</th>
+                <th>Seat Count</th>
+                <th>Amenities</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bus in Model)
+            {
+                <tr>
+                    <td>@bus.Name</td>
+                    <td>@bus.BusNumber</td>
+                    <td>@bus.Type</td>
+                    <td>@bus.SeatCount</td>
+                    <td>@bus.Amenities</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@bus.Id" class="btn btn-sm"
+                           style="background-color:#cce5ff; color:black; border:1px solid #007bff; cursor: pointer;">
+                            ✏️ Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@bus.Id" class="btn btn-sm ms-2"
+                           style="background-color:#f8d7da; color:black; border:1px solid #dc3545; cursor: pointer;">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

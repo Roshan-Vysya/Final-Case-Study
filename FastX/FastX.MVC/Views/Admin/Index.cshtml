@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<!-- Header -->
+<h2 class="mb-4 text-primary fw-bold">👨‍💼 Welcome, Admin</h2>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card border-success shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">🛣️ Manage Routes</h5>
+                <p class="card-text">View, add, and update bus routes.</p>
+                <a href="@Url.Action("Index", "Route")" class="btn btn-outline-success">Go to Routes</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-primary shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">🚌 Manage Buses</h5>
+                <p class="card-text">View and manage available buses.</p>
+                <a href="@Url.Action("Index", "Bus")" class="btn btn-outline-primary">Go to Buses</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-warning shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">📖 View Bookings</h5>
+                <p class="card-text">Track all customer bookings.</p>
+                <a href="@Url.Action("Index", "Booking")" class="btn btn-outline-warning">Go to Bookings</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-danger shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">👥 Manage Operators</h5>
+                <p class="card-text">Add and manage operator accounts.</p>
+                <a href="@Url.Action("Index", "Operator")" class="btn btn-outline-danger">Go to Operators</a>
+            </div>
+        </div>
+    </div>
+</div>

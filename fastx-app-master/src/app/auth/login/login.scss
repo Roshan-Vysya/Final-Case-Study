@@ -1,0 +1,35 @@
+.login-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px 28px;
+  background: var(--surface);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.10);
+  border-radius: 16px;
+  animation: fadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: var(--accent);
+    transition: color 0.3s;
+    &:hover {
+      color: var(--accent-light);
+      text-decoration: underline;
+    }
+  }
+}
